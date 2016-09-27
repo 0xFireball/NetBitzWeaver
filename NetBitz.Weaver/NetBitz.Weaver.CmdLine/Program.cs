@@ -1,4 +1,8 @@
-﻿using System;
+﻿using NetBitz.Weaver.ProtectionPipeline;
+using NetBitz.Weaver.Types;
+using NetBitz.Weaver.Utilities;
+using System;
+using System.IO;
 
 namespace NetBitz.Weaver.CmdLine
 {
@@ -28,6 +32,12 @@ namespace NetBitz.Weaver.CmdLine
             {
                 var inputFile = parsedArgs["-f"];
                 var outputFile = parsedArgs["-o"];
+                
+                var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
+                var protectionConfiguration = ProtectionConfiguration.GetDefault();
+                protectionConfiguration.InputAssemblies.Add(loadedAssembly);
+                var protector = new WeaverProtector(protectionConfiguration);
+                protector.Run();
             }
         }
 

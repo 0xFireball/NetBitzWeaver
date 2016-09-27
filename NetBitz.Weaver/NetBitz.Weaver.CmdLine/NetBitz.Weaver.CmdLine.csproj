@@ -55,6 +55,10 @@
     <None Include="NetBitzWeaver.CmdLine.snk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\dnlib\dnlib.csproj">
+      <Project>{FDFC1237-143F-4919-8318-4926901F4639}</Project>
+      <Name>dnlib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetBitz.Weaver\NetBitz.Weaver.csproj">
       <Project>{aeeb4b1a-cd17-410c-8f1b-8c2cb7993711}</Project>
       <Name>NetBitz.Weaver</Name>
