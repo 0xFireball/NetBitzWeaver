@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitz.Weaver", "NetBitz.Weaver\NetBitz.Weaver.csproj", "{AEEB4B1A-CD17-410C-8F1B-8C2CB7993711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitz.Weaver.CmdLine", "NetBitz.Weaver.CmdLine\NetBitz.Weaver.CmdLine.csproj", "{3072CF6D-1985-43F7-A623-606B73ACDC1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{8BD729AE-8A63-4852-B7F2-A13F028A7D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnlib", "..\Libraries\dnlib\dnlib.csproj", "{FDFC1237-143F-4919-8318-4926901F4639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEEB4B1A-CD17-410C-8F1B-8C2CB7993711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEB4B1A-CD17-410C-8F1B-8C2CB7993711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEB4B1A-CD17-410C-8F1B-8C2CB7993711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEB4B1A-CD17-410C-8F1B-8C2CB7993711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3072CF6D-1985-43F7-A623-606B73ACDC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3072CF6D-1985-43F7-A623-606B73ACDC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3072CF6D-1985-43F7-A623-606B73ACDC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3072CF6D-1985-43F7-A623-606B73ACDC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFC1237-143F-4919-8318-4926901F4639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFC1237-143F-4919-8318-4926901F4639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFC1237-143F-4919-8318-4926901F4639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFC1237-143F-4919-8318-4926901F4639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDFC1237-143F-4919-8318-4926901F4639} = {8BD729AE-8A63-4852-B7F2-A13F028A7D83}
+	EndGlobalSection
+EndGlobal
