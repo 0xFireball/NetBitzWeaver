@@ -9,6 +9,6 @@ namespace NetBitz.Weaver.Types
         string Name { get; }
         string Description { get; }
 
-        void RunProtection(ModuleDef[] inputModules, ModuleWriterOptions writerOpts);
+        void RunProtection(ProtectedModuleFactory factory);
     }
 }

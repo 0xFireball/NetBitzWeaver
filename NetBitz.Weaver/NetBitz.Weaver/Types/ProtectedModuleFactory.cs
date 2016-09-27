@@ -1,15 +1,12 @@
 ﻿using dnlib.DotNet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using dnlib.DotNet.Writer;
 
 namespace NetBitz.Weaver.Types
 {
     public class ProtectedModuleFactory
     {
         public ModuleDef Module { get; }
+        public ModuleWriterOptions WriterOptions { get; private set; }
 
         public ProtectedModuleFactory(ModuleDef module)
         {
@@ -19,7 +16,7 @@ namespace NetBitz.Weaver.Types
 
         private void CreateModuleObjects()
         {
-            throw new NotImplementedException();
+            WriterOptions = new ModuleWriterOptions(Module);
         }
     }
 }

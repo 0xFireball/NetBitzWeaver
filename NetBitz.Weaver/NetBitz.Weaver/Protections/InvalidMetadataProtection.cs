@@ -1,6 +1,4 @@
-﻿using dnlib.DotNet;
-using dnlib.DotNet.Writer;
-using NetBitz.Weaver.Types;
+﻿using NetBitz.Weaver.Types;
 
 namespace NetBitz.Weaver.Protections
 {
@@ -10,13 +8,13 @@ namespace NetBitz.Weaver.Protections
         public string Name => "Invalid Metadata";
         public string Description => "Injects invalid metadata into the assembly";
 
-        public void RunProtection(ModuleDef[] inputModule, ModuleWriterOptions writerOpts)
+        public void RunProtection(ProtectedModuleFactory factory)
         {
             //Confuse metadata readers
-            writerOpts.PEHeadersOptions.NumberOfRvaAndSizes = 8;
+            factory.WriterOptions.PEHeadersOptions.NumberOfRvaAndSizes = 8;
 
             //add junk extra data
-            writerOpts.MetaDataOptions.TablesHeapOptions.ExtraData = 0xC0FEED93;
+            factory.WriterOptions.MetaDataOptions.TablesHeapOptions.ExtraData = 0xC0FEED93;
         }
     }
 }
