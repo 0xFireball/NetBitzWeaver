@@ -6,6 +6,7 @@ namespace NetBitz.Weaver.ProtectionPipeline
     public class WeaverProtector
     {
         private ProtectionConfiguration Configuration { get; }
+        public ProtectedModuleFactoryCollection Factories { get; } = new ProtectedModuleFactoryCollection();
 
         public WeaverProtector(ProtectionConfiguration protectionConfiguration)
         {
@@ -14,8 +15,9 @@ namespace NetBitz.Weaver.ProtectionPipeline
 
         public void Run()
         {
-            var inputModuleFactories = Configuration.InputAssemblies.Select(asm => new ProtectedModuleFactory(asm.ManifestModule));
-            //Protect each module
+            var inputModuleFactories = Configuration.InputAssemblies.Select(asm => new ProtectedModuleFactory(asm.ManifestModule)).ToList();
+            //Create a factory collection
+            Factories.AddRange(inputModuleFactories);
 
         }
     }

@@ -46,6 +46,7 @@
     <Compile Include="Protections\InvalidMetadataProtection.cs" />
     <Compile Include="Types\IWeaverProtection.cs" />
     <Compile Include="Types\ProtectedModuleFactory.cs" />
+    <Compile Include="Types\ProtectedModuleFactoryCollection.cs" />
     <Compile Include="Types\ProtectionConfiguration.cs" />
     <Compile Include="Utilities\AssemblyLoader.cs" />
   </ItemGroup>
