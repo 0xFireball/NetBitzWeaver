@@ -29,19 +29,37 @@ namespace NetBitz.Weaver.CmdLine
                 ShowHelp();
                 return;
             }
-            if (parsedArgs["-f"] != null && parsedArgs["-o"] != null)
+            if (parsedArgs["f"] != null && parsedArgs["o"] != null)
             {
-                var inputFile = parsedArgs["-f"];
-                var outputFile = parsedArgs["-o"];
+                var inputFile = parsedArgs["f"];
+                var outputFile = parsedArgs["o"];
 
+                Console.WriteLine($"Preparing NetBitz Weaver: {inputFile} -> {outputFile}");
+
+                Console.WriteLine("Opening assembly...");
                 var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
                 var protectionConfiguration = new ProtectionConfiguration();
 
+                Console.WriteLine("Loading protections...");
+
+                //Load all the protections that can be found into the 
                 var pluginConfigurator = new PluginConfigurator(protectionConfiguration);
                 pluginConfigurator.LoadAllAvailableProtections();
 
+                var protections = pluginConfigurator.Configuration.Protections;
+
+                Console.WriteLine($"{protections.Count} Protections loaded: ");
+                foreach (var protection in protections)
+                {
+                    Console.WriteLine($"    {protection.Name} - {protection.Description} - {protection.Guid}");
+                }
+
+                Console.WriteLine("Preparing protection pipeline...");
+
                 protectionConfiguration.InputAssemblies.Add(loadedAssembly);
                 var protector = new WeaverProtector(protectionConfiguration);
+
+                Console.WriteLine("Running protectors...");
                 protector.Run();
             }
         }
@@ -50,7 +68,7 @@ namespace NetBitz.Weaver.CmdLine
         {
             Console.WriteLine("Usage: NBWeaver [arguments]");
             Console.WriteLine(" -h : Show help");
-            Console.WriteLine(" -f : Input file containing a .NET assembly");
+            Console.WriteLine(" -f : Input file containing a .NET assembly. By default, all protections will be run.\nUse a project to override this behavior.");
             Console.WriteLine(" -o : Output assembly (use with -f)");
             Console.WriteLine(" -p : Input file containing a NetBitz Weaver project file.");
             Console.WriteLine();
