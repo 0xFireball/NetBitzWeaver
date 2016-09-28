@@ -1,6 +1,10 @@
 ﻿namespace NetBitz.Weaver.Types
 {
-    public interface IWeaverProtection
+    /// <summary>
+    /// A protection for the NetBitz Weaver pipeline. Possibly, a different kind of protection will be added
+    /// in the future.
+    /// </summary>
+    public interface IWeaverPipelineProtection
     {
         /// <summary>
         /// A GUID for the protection

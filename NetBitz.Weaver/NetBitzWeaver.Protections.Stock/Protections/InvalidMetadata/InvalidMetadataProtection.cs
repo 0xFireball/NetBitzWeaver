@@ -3,7 +3,7 @@ using System;
 
 namespace NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata
 {
-    public class InvalidMetadataProtection : IWeaverProtection
+    public class InvalidMetadataProtection : IWeaverPipelineProtection
     {
         public string Guid => "3558fd78-cc6a-4b0b-a0a7-22f559b62b01";
         public string Name => "Invalid Metadata";

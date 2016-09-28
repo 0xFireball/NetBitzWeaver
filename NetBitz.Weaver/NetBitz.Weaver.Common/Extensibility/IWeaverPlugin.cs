@@ -6,6 +6,6 @@ namespace NetBitz.Weaver.Common.Extensibility
 {
     public interface IWeaverPlugin : IPlatinumPlugin
     {
-        List<IWeaverProtection> Protections { get; }
+        List<IWeaverPipelineProtection> Protections { get; }
     }
 }

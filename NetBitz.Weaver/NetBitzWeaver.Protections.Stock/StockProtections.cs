@@ -1,5 +1,6 @@
 ﻿using NetBitz.Weaver.Common.Extensibility;
 using NetBitz.Weaver.Types;
+using NetBitzWeaver.Protections.Stock.Protections.AntiDebug;
 using NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata;
 using Platinum.PluginCore3;
 using Platinum.PluginCore3.Classes;
@@ -22,7 +23,7 @@ namespace NetBitzWeaver.Protections.Stock
 
         public string PreferencesKey => "stockprotections";
 
-        public List<IWeaverProtection> Protections { get; } = new List<IWeaverProtection>();
+        public List<IWeaverPipelineProtection> Protections { get; } = new List<IWeaverPipelineProtection>();
 
         public Version Version => typeof(StockProtections).Assembly.GetName().Version;
 
@@ -45,6 +46,7 @@ namespace NetBitzWeaver.Protections.Stock
         {
             //Build protections list
             Protections.Add(new InvalidMetadataProtection());
+            Protections.Add(new AntiDebugProtection());
         }
 
         public void Shutdown()

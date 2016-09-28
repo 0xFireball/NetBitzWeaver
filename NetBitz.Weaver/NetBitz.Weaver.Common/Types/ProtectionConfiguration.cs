@@ -8,7 +8,7 @@ namespace NetBitz.Weaver.Types
     /// </summary>
     public class ProtectionConfiguration
     {
-        public List<IWeaverProtection> Protections { get; } = new List<IWeaverProtection>();
+        public List<IWeaverPipelineProtection> Protections { get; } = new List<IWeaverPipelineProtection>();
         public List<AssemblyDef> InputAssemblies { get; } = new List<AssemblyDef>();
     }
 }
