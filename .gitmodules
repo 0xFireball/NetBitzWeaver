@@ -1,0 +1,3 @@
+[submodule "Libraries/Platinum.PluginCore3"]
+	path = Libraries/Platinum.PluginCore3
+	url = https://github.com/0xFireball/Platinum.PluginCore3
