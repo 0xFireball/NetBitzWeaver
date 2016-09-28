@@ -1,14 +1,30 @@
-﻿using dnlib.DotNet;
-using dnlib.DotNet.Writer;
-
-namespace NetBitz.Weaver.Types
+﻿namespace NetBitz.Weaver.Types
 {
     public interface IWeaverProtection
     {
+        /// <summary>
+        /// A GUID for the protection
+        /// </summary>
         string Guid { get; }
+
+        /// <summary>
+        /// The name of the protection
+        /// </summary>
         string Name { get; }
+
+        /// <summary>
+        /// A description about the protection
+        /// </summary>
         string Description { get; }
 
+        /// <summary>
+        /// Specifies whether the protection must be run on a batch or whether it can be run individually
+        /// on each module factory.
+        /// </summary>
+        bool RequiresBatchProtection { get; }
+
         void RunProtection(ProtectedModuleFactory factory);
+
+        void RunProtection(ProtectedModuleFactoryCollection factoryCollection);
     }
 }

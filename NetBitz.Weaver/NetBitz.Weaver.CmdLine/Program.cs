@@ -32,9 +32,10 @@ namespace NetBitz.Weaver.CmdLine
             {
                 var inputFile = parsedArgs["-f"];
                 var outputFile = parsedArgs["-o"];
-                
+
                 var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
-                var protectionConfiguration = ProtectionConfiguration.GetDefault();
+                var protectionConfiguration = new ProtectionConfiguration();
+
                 protectionConfiguration.InputAssemblies.Add(loadedAssembly);
                 var protector = new WeaverProtector(protectionConfiguration);
                 protector.Run();
