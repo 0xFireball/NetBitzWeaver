@@ -5,11 +5,11 @@ namespace NetBitz.Weaver.Extensibility
 {
     public class WeaverPluginLoader
     {
-        public PluginLoader<IWeaverPlugin> PluginLoader { get; }
+        public PluginLoader<IWeaverPlugin> CoreLoader { get; }
 
         public WeaverPluginLoader()
         {
-            PluginLoader = new PluginLoader<IWeaverPlugin>();
+            CoreLoader = new PluginLoader<IWeaverPlugin>();
         }
     }
 }

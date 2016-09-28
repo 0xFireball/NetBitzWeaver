@@ -1,4 +1,5 @@
-﻿using NetBitz.Weaver.ProtectionPipeline;
+﻿using NetBitz.Weaver.Extensibility;
+using NetBitz.Weaver.ProtectionPipeline;
 using NetBitz.Weaver.Types;
 using NetBitz.Weaver.Utilities;
 using System;
@@ -36,7 +37,8 @@ namespace NetBitz.Weaver.CmdLine
                 var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
                 var protectionConfiguration = new ProtectionConfiguration();
 
-
+                var pluginConfigurator = new PluginConfigurator(protectionConfiguration);
+                pluginConfigurator.LoadAllAvailableProtections();
 
                 protectionConfiguration.InputAssemblies.Add(loadedAssembly);
                 var protector = new WeaverProtector(protectionConfiguration);
