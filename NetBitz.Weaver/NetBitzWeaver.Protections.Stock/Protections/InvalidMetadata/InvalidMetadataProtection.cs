@@ -1,7 +1,7 @@
 ﻿using NetBitz.Weaver.Types;
 using System;
 
-namespace NetBitz.Weaver.Protections
+namespace NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata
 {
     public class InvalidMetadataProtection : IWeaverProtection
     {

@@ -23,7 +23,7 @@ namespace NetBitz.Weaver.Extensibility
         public void LoadAllAvailableProtections()
         {
             LoadAllAvailablePlugins();
-            var pluginInstances = PluginLoader.CoreLoader.Factory.AvailablePlugins.Select(plg => plg.Instance);
+            var pluginInstances = PluginLoader.CoreLoader.Factory.AvailablePlugins.Select(plg => plg.Instance).ToList();
             foreach (var plugin in pluginInstances)
             {
                 //Prepare plugin

@@ -40,13 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvalidMetadataProtection.cs" />
+    <Compile Include="Protections\InvalidMetadata\InvalidMetadataProtection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockProtections.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\dnlib\dnlib.csproj">
       <Project>{FDFC1237-143F-4919-8318-4926901F4639}</Project>
       <Name>dnlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Platinum.PluginCore3\Platinum.PluginCore3\Platinum.PluginCore3\Platinum.PluginCore3.csproj">
+      <Project>{DAA88772-E4F3-4EFA-B6F6-6CA064154971}</Project>
+      <Name>Platinum.PluginCore3</Name>
     </ProjectReference>
     <ProjectReference Include="..\NetBitz.Weaver.Common\NetBitz.Weaver.Common.csproj">
       <Project>{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}</Project>
