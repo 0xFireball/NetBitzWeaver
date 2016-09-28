@@ -1,5 +1,5 @@
-﻿using Platinum.PluginCore3;
-using System.Reflection;
+﻿using NetBitz.Weaver.Common.Extensibility;
+using Platinum.PluginCore3;
 
 namespace NetBitz.Weaver.Extensibility
 {
