@@ -36,6 +36,8 @@ namespace NetBitz.Weaver.CmdLine
                 var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
                 var protectionConfiguration = new ProtectionConfiguration();
 
+
+
                 protectionConfiguration.InputAssemblies.Add(loadedAssembly);
                 var protector = new WeaverProtector(protectionConfiguration);
                 protector.Run();

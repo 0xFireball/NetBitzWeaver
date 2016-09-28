@@ -59,6 +59,10 @@
       <Project>{FDFC1237-143F-4919-8318-4926901F4639}</Project>
       <Name>dnlib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetBitz.Weaver.Common\NetBitz.Weaver.Common.csproj">
+      <Project>{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}</Project>
+      <Name>NetBitz.Weaver.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetBitz.Weaver\NetBitz.Weaver.csproj">
       <Project>{aeeb4b1a-cd17-410c-8f1b-8c2cb7993711}</Project>
       <Name>NetBitz.Weaver</Name>
