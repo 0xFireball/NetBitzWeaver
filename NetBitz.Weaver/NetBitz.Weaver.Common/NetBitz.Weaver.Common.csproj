@@ -48,11 +48,14 @@
   <ItemGroup>
     <Compile Include="Extensibility\IWeaverPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RandomService.cs" />
+    <Compile Include="Services\RandomServiceUtil.cs" />
     <Compile Include="Types\IWeaverPipelineProtection.cs" />
     <Compile Include="Types\ProtectedModuleFactory.cs" />
     <Compile Include="Types\ProtectedModuleFactoryCollection.cs" />
     <Compile Include="Types\ProtectionConfiguration.cs" />
     <Compile Include="Utilities\AssemblyLoader.cs" />
+    <Compile Include="Utilities\ModuleWriterListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\dnlib\dnlib.csproj">

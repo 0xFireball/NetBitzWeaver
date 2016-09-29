@@ -6,7 +6,7 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
 {
     internal class AntiDebugProtection : IWeaverPipelineProtection
     {
-        public string Guid => "4fcd52ee-0f19-4c08-bdab-8aa6515cb6cd";
+        public string ProtectionGuid => "4fcd52ee-0f19-4c08-bdab-8aa6515cb6cd";
         public string Name => "Anti-Debug";
         public string Description => "Protects the module from being debugged by a managed debugger";
         public bool RequiresBatchProtection => false;
@@ -30,6 +30,7 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
                     // ...
                 }
                 */
+
             }
         }
 

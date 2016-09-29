@@ -51,7 +51,7 @@ namespace NetBitz.Weaver.CmdLine
                 Console.WriteLine($"{protections.Count} Protections loaded: ");
                 foreach (var protection in protections)
                 {
-                    Console.WriteLine($"    {protection.Name} - {protection.Description} - {protection.Guid}");
+                    Console.WriteLine($"    {protection.Name} - {protection.Description} - {protection.ProtectionGuid}");
                 }
 
                 Console.WriteLine("Preparing protection pipeline...");

@@ -9,7 +9,7 @@
         /// <summary>
         /// A GUID for the protection
         /// </summary>
-        string Guid { get; }
+        string ProtectionGuid { get; }
 
         /// <summary>
         /// The name of the protection
