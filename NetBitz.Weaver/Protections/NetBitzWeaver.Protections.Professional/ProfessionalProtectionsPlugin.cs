@@ -1,7 +1,6 @@
 ﻿using NetBitz.Weaver.Common.Extensibility;
 using NetBitz.Weaver.Types;
-using NetBitzWeaver.Protections.Stock.Protections.AntiDebug;
-using NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata;
+using NetBitzWeaver.Protections.Professional.Protections.AntiDebug;
 using Platinum.PluginCore3;
 using Platinum.PluginCore3.Classes;
 using System;
@@ -45,7 +44,6 @@ namespace NetBitzWeaver.Protections.Stock
         public void LoadComponents()
         {
             //Build protections list
-            Protections.Add(new InvalidMetadataProtection());
             Protections.Add(new AntiDebugProtection());
         }
 

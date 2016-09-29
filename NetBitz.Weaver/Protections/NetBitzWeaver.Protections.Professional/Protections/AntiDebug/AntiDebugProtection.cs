@@ -3,7 +3,7 @@ using dnlib.DotNet.Emit;
 using NetBitz.Weaver.Types;
 using System;
 
-namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
+namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
 {
     internal class AntiDebugProtection : IWeaverPipelineProtection
     {

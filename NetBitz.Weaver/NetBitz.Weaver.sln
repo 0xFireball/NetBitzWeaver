@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layers", "Layers", "{C2D568
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shields", "Shields", "{1987ADB4-26A7-4952-AEDE-FCD1FD301F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Protections.Stock", "NetBitzWeaver.Protections.Stock\NetBitzWeaver.Protections.Stock.csproj", "{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronShield", "Layers\Shields\IronShield\IronShield.csproj", "{F0FAA597-76BE-4B9C-8197-5D995382B101}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platinum.PluginCore3", "..\Libraries\Platinum.PluginCore3\Platinum.PluginCore3\Platinum.PluginCore3\Platinum.PluginCore3.csproj", "{DAA88772-E4F3-4EFA-B6F6-6CA064154971}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitz.Weaver.Common", "NetBitz.Weaver.Common\NetBitz.Weaver.Common.csproj", "{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protections", "Protections", "{C3A27432-C947-450A-9412-C44A70834457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Protections.Stock", "Protections\NetBitzWeaver.Protections.Stock\NetBitzWeaver.Protections.Stock.csproj", "{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Protections.Professional", "Protections\NetBitzWeaver.Protections.Professional\NetBitzWeaver.Protections.Professional.csproj", "{8537B013-71D2-4304-B909-1A74DB5C629D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +45,6 @@ Global
 		{FDFC1237-143F-4919-8318-4926901F4639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDFC1237-143F-4919-8318-4926901F4639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDFC1237-143F-4919-8318-4926901F4639}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0FAA597-76BE-4B9C-8197-5D995382B101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0FAA597-76BE-4B9C-8197-5D995382B101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0FAA597-76BE-4B9C-8197-5D995382B101}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +57,14 @@ Global
 		{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD2AF2DD-0DFF-4CD4-9563-07F4B0FFB956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8537B013-71D2-4304-B909-1A74DB5C629D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8537B013-71D2-4304-B909-1A74DB5C629D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8537B013-71D2-4304-B909-1A74DB5C629D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8537B013-71D2-4304-B909-1A74DB5C629D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +74,7 @@ Global
 		{1987ADB4-26A7-4952-AEDE-FCD1FD301F37} = {C2D56875-BFE3-4D0D-BE0A-97875EA3A5F0}
 		{F0FAA597-76BE-4B9C-8197-5D995382B101} = {1987ADB4-26A7-4952-AEDE-FCD1FD301F37}
 		{DAA88772-E4F3-4EFA-B6F6-6CA064154971} = {8BD729AE-8A63-4852-B7F2-A13F028A7D83}
+		{D0743E9D-4DDF-42B7-82CC-D53CF17319F6} = {C3A27432-C947-450A-9412-C44A70834457}
+		{8537B013-71D2-4304-B909-1A74DB5C629D} = {C3A27432-C947-450A-9412-C44A70834457}
 	EndGlobalSection
 EndGlobal
