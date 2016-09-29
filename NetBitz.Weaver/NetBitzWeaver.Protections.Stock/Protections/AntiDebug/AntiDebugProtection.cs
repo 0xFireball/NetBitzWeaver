@@ -33,19 +33,20 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
                 */
 
                 //Load entry point CIL body
-                
+
                 var entryPointRef = factory.Module.EntryPoint;
                 var entryPointBody = entryPointRef.Body;
 
                 //Inject a check to test if debugger is there
-                var debuggerType = factory.Module.Import(typeof(System.Diagnostics.Debugger)).ResolveTypeDef();
-                var debuggerAttachedProperty = debuggerType.FindProperty("IsAttached");
-                var debuggerAttachedGetter = debuggerAttachedProperty.GetMethod;
+                var debuggerTypeRef = new TypeRefUser(factory.Module, "System.Diagnostics", "Debugger", factory.Module.CorLibTypes.AssemblyRef);
 
+                var isAttachedPropertyGetSig = MethodSig.CreateStatic(factory.Module.CorLibTypes.Boolean);
 
+                var debuggerAttachedPropertyGetterRef = new MemberRefUser(factory.Module, "IsAttached", isAttachedPropertyGetSig, debuggerTypeRef);
 
-                entryPointBody.Instructions.Insert(0, OpCodes.Call.ToInstruction()); //System.Diagnostics.Debugger.IsAttached_get()
-                entryPointBody.Instructions.Insert(1, OpCodes.Brfalse_S.ToInstruction()); //if (!result)
+                var originalFirstInstruction = entryPointBody.Instructions[0]; //Get first instruction to jump to
+                entryPointBody.Instructions.Insert(0, OpCodes.Call.ToInstruction(debuggerAttachedPropertyGetterRef)); //System.Diagnostics.Debugger.IsAttached_get()
+                entryPointBody.Instructions.Insert(1, OpCodes.Brfalse_S.ToInstruction(originalFirstInstruction)); //if (!result) goto instr_3
                 entryPointBody.Instructions.Insert(2, OpCodes.Ret.ToInstruction()); //return
             }
         }

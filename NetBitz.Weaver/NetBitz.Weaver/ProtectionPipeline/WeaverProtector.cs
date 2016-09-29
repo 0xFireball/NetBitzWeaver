@@ -15,10 +15,26 @@ namespace NetBitz.Weaver.ProtectionPipeline
 
         public void Run()
         {
+            //Create factories
             var inputModuleFactories = Configuration.InputAssemblies.Select(asm => new ProtectedModuleFactory(asm.ManifestModule)).ToList();
             //Create a factory collection
             Factories.AddRange(inputModuleFactories);
 
+            foreach (var protection in Configuration.Protections)
+            {
+                if (!protection.RequiresBatchProtection)
+                {
+                    foreach (var moduleFactory in Factories)
+                    {
+                        //Run the protection on the module's factory
+                        protection.RunProtection(moduleFactory);
+                    }
+                }
+                else
+                {
+                    //TODO: Batch protection
+                }
+            }
         }
     }
 }

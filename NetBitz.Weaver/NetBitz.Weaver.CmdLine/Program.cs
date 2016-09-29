@@ -36,13 +36,15 @@ namespace NetBitz.Weaver.CmdLine
 
                 Console.WriteLine($"Preparing NetBitz Weaver: {inputFile} -> {outputFile}");
 
+                var protectionConfiguration = new ProtectionConfiguration();
+
                 Console.WriteLine("Opening assembly...");
                 var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
-                var protectionConfiguration = new ProtectionConfiguration();
+                protectionConfiguration.InputAssemblies.Add(loadedAssembly);
 
                 Console.WriteLine("Loading protections...");
 
-                //Load all the protections that can be found into the 
+                //Load all the protections that can be found into the
                 var pluginConfigurator = new PluginConfigurator(protectionConfiguration);
                 pluginConfigurator.LoadAllAvailableProtections();
 
@@ -55,12 +57,19 @@ namespace NetBitz.Weaver.CmdLine
                 }
 
                 Console.WriteLine("Preparing protection pipeline...");
-
-                protectionConfiguration.InputAssemblies.Add(loadedAssembly);
+                
                 var protector = new WeaverProtector(protectionConfiguration);
 
                 Console.WriteLine("Running protectors...");
                 protector.Run();
+
+                Console.WriteLine("Writing modules...");
+
+                //There should only be one
+                foreach (var factory in protector.Factories)
+                {
+                    factory.Module.Write(outputFile);
+                }
             }
         }
 
