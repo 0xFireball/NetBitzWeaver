@@ -12,15 +12,15 @@ namespace NetBitzWeaver.Protections.Stock
     {
         public string Author => "0xFireball";
 
-        public string Description => "The standard set of protections for NetBitz Weaver";
+        public string Description => "A set of protections for NetBitz Weaver Professional Edition";
 
-        public string Guid { get; set; } = "8d8f9a7b-7f79-4212-8e2c-907a12a24b7c";
+        public string Guid { get; set; } = "8de7e395-6831-47e0-8bbd-6ffe108b765b";
 
         public IPlatinumPluginHost Host { get; set; }
 
-        public string Name => "Stock Protections";
+        public string Name => "Professoinal Protections";
 
-        public string PreferencesKey => "stockprotections";
+        public string PreferencesKey => "professionalprotections";
 
         public List<IWeaverPipelineProtection> Protections { get; } = new List<IWeaverPipelineProtection>();
 

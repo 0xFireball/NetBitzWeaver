@@ -57,7 +57,7 @@ namespace NetBitz.Weaver.CmdLine
                 }
 
                 Console.WriteLine("Preparing protection pipeline...");
-                
+
                 var protector = new WeaverProtector(protectionConfiguration);
 
                 Console.WriteLine("Running protectors...");
@@ -65,11 +65,23 @@ namespace NetBitz.Weaver.CmdLine
 
                 Console.WriteLine("Writing modules...");
 
+                //var outputModuleStreams = new List<MemoryStream>();
+
                 //There should only be one
                 foreach (var factory in protector.Factories)
                 {
-                    factory.Module.Write(outputFile);
+                    using (var outputMemStream = new MemoryStream())
+                    {
+                        factory.Module.Write(outputMemStream, factory.WriterOptions);
+                        using (var outputFileStream = File.Open(outputFile, FileMode.Create, FileAccess.Write))
+                        {
+                            outputMemStream.Position = 0; //reset memstream
+                            outputMemStream.CopyTo(outputFileStream); //copy to file
+                        }
+                    }
                 }
+
+                //outputModuleStreams.Add(outputStream);
             }
         }
 

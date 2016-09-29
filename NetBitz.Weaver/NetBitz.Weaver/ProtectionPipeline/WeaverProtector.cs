@@ -26,8 +26,10 @@ namespace NetBitz.Weaver.ProtectionPipeline
                 {
                     foreach (var moduleFactory in Factories)
                     {
+                        protection.Initialize(); //reset the protector
                         //Run the protection on the module's factory
                         protection.RunProtection(moduleFactory);
+                        protection.Unload(); //clean up
                     }
                 }
                 else
