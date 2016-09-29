@@ -27,8 +27,18 @@
         /// </summary>
         bool RequiresBatchProtection { get; }
 
+        /// <summary>
+        /// Initializes the protection provider
+        /// </summary>
+        void Initialize();
+
         void RunProtection(ProtectedModuleFactory factory);
 
         void RunProtection(ProtectedModuleFactoryCollection factoryCollection);
+
+        /// <summary>
+        /// Allows the protection class to do cleanup
+        /// </summary>
+        void Unload();
     }
 }

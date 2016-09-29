@@ -11,6 +11,11 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
         public string Description => "Protects the module from being debugged by a managed debugger";
         public bool RequiresBatchProtection => false;
 
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
         public void RunProtection(ProtectedModuleFactory factory)
         {
             //Prevent module from being debugged
@@ -29,6 +34,11 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
         }
 
         public void RunProtection(ProtectedModuleFactoryCollection factoryCollection)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Unload()
         {
             throw new NotImplementedException();
         }

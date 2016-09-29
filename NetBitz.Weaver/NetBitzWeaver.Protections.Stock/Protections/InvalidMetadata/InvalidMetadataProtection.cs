@@ -10,6 +10,11 @@ namespace NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata
         public string Description => "Injects invalid metadata into the assembly";
         public bool RequiresBatchProtection => false;
 
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
         public void RunProtection(ProtectedModuleFactory factory)
         {
             //Confuse metadata readers
@@ -20,6 +25,11 @@ namespace NetBitzWeaver.Protections.Stock.Protections.InvalidMetadata
         }
 
         public void RunProtection(ProtectedModuleFactoryCollection factoryCollection)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Unload()
         {
             throw new NotImplementedException();
         }
