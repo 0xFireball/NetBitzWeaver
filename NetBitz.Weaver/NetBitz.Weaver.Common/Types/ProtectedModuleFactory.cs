@@ -6,11 +6,11 @@ namespace NetBitz.Weaver.Types
 {
     public class ProtectedModuleFactory
     {
-        public ModuleDef Module { get; }
+        public ModuleDefMD Module { get; }
         public ModuleWriterOptions WriterOptions { get; private set; }
         public ModuleWriterListener CurrentModuleWriterListener => WriterOptions.Listener as ModuleWriterListener;
 
-        public ProtectedModuleFactory(ModuleDef module)
+        public ProtectedModuleFactory(ModuleDefMD module)
         {
             Module = module;
             CreateModuleObjects();
