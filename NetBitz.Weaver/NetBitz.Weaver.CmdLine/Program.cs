@@ -73,13 +73,16 @@ namespace NetBitz.Weaver.CmdLine
                     using (var outputMemStream = new MemoryStream())
                     {
                         factory.Module.Write(outputMemStream, factory.WriterOptions);
-                        using (var outputFileStream = File.Open(outputFile, FileMode.Create, FileAccess.Write))
+                        using (var outputFileStream = File.OpenWrite(outputFile))
                         {
                             outputMemStream.Position = 0; //reset memstream
                             outputMemStream.CopyTo(outputFileStream); //copy to file
                         }
                     }
                 }
+
+                //Run protector cleanup
+                protector.UnloadProtectors();
 
                 //outputModuleStreams.Add(outputStream);
             }

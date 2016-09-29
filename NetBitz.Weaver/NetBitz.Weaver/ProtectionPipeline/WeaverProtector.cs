@@ -26,10 +26,9 @@ namespace NetBitz.Weaver.ProtectionPipeline
                 {
                     foreach (var moduleFactory in Factories)
                     {
-                        protection.Initialize(); //reset the protector
+                        protection.Initialize(); //prepare for new module
                         //Run the protection on the module's factory
                         protection.RunProtection(moduleFactory);
-                        protection.Unload(); //clean up
                     }
                 }
                 else
@@ -37,6 +36,11 @@ namespace NetBitz.Weaver.ProtectionPipeline
                     //TODO: Batch protection
                 }
             }
+        }
+
+        public void UnloadProtectors()
+        {
+            Configuration.Protections.ForEach(pr => pr.Unload());
         }
     }
 }

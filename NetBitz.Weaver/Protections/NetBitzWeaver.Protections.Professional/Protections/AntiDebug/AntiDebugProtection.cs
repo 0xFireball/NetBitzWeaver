@@ -14,7 +14,7 @@ namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
 
         public void Initialize()
         {
-            throw new NotImplementedException();
+            //Nothing to do here
         }
 
         public void RunProtection(ProtectedModuleFactory factory)
@@ -58,7 +58,7 @@ namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
 
         public void Unload()
         {
-            throw new NotImplementedException();
+            //Nothing to do here
         }
     }
 }
