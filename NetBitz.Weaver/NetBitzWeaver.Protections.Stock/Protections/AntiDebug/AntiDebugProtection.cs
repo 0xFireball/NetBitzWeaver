@@ -42,7 +42,7 @@ namespace NetBitzWeaver.Protections.Stock.Protections.AntiDebug
 
                 var isAttachedPropertyGetSig = MethodSig.CreateStatic(factory.Module.CorLibTypes.Boolean);
 
-                var debuggerAttachedPropertyGetterRef = new MemberRefUser(factory.Module, "IsAttached", isAttachedPropertyGetSig, debuggerTypeRef);
+                var debuggerAttachedPropertyGetterRef = new MemberRefUser(factory.Module, "get_IsAttached", isAttachedPropertyGetSig, debuggerTypeRef);
 
                 var originalFirstInstruction = entryPointBody.Instructions[0]; //Get first instruction to jump to
                 entryPointBody.Instructions.Insert(0, OpCodes.Call.ToInstruction(debuggerAttachedPropertyGetterRef)); //System.Diagnostics.Debugger.IsAttached_get()
