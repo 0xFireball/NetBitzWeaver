@@ -43,6 +43,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProfessionalProtectionsPlugin.cs" />
     <Compile Include="Protections\AntiDebug\AntiDebugProtection.cs" />
+    <Compile Include="Protections\AntiDebug\SafeAntiDebugHelper.cs" />
+    <Compile Include="Utilities\RuntimeTypeLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Libraries\dnlib\src\dnlib.csproj">

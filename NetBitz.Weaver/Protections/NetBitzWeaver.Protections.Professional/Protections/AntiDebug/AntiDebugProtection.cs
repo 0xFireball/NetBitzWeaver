@@ -1,7 +1,11 @@
 ﻿using dnlib.DotNet;
 using dnlib.DotNet.Emit;
+using NetBitz.Weaver.Common.Helpers;
 using NetBitz.Weaver.Types;
+using NetBitzWeaver.Protections.Professional.Utilities;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
 {
@@ -33,10 +37,8 @@ namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
                 */
 
                 //Load entry point CIL body
-
-                //Inject into .cctor
-                var globalCtorDef = factory.Module.GlobalType.FindOrCreateStaticConstructor();
-                var entryPointBody = globalCtorDef.Body;
+                var entryPointMethodDef = factory.Module.EntryPoint;
+                var entryPointBody = entryPointMethodDef.Body;
 
                 //Inject a check to test if debugger is there
                 var debuggerTypeRef = new TypeRefUser(factory.Module, "System.Diagnostics", "Debugger", factory.Module.CorLibTypes.AssemblyRef);
@@ -46,9 +48,20 @@ namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
                 var debuggerAttachedPropertyGetterRef = new MemberRefUser(factory.Module, "get_IsAttached", isAttachedPropertyGetSig, debuggerTypeRef);
 
                 var originalFirstInstruction = entryPointBody.Instructions[0]; //Get first instruction to jump to
+                
+                //inject into entry point function
                 entryPointBody.Instructions.Insert(0, OpCodes.Call.ToInstruction(debuggerAttachedPropertyGetterRef)); //System.Diagnostics.Debugger.IsAttached_get()
                 entryPointBody.Instructions.Insert(1, OpCodes.Brfalse_S.ToInstruction(originalFirstInstruction)); //if (!result) goto instr_3
                 entryPointBody.Instructions.Insert(2, OpCodes.Ret.ToInstruction()); //return
+
+                //inject antidebug helper into .cctor
+
+                TypeDef antiDebugHelperType = RuntimeTypeLoader.GetRuntimeType(typeof(SafeAntiDebugHelper).FullName);
+                List<IDnlibDef> members = InjectHelper.Inject(antiDebugHelperType, factory.Module.GlobalType, factory.Module).ToList();
+                
+                MethodDef cctor = factory.Module.GlobalType.FindOrCreateStaticConstructor();
+                var init = (MethodDef)members.Single(method => method.Name == nameof(SafeAntiDebugHelper.Initialize));
+                cctor.Body.Instructions.Insert(0, Instruction.Create(OpCodes.Call, init));
             }
         }
 
