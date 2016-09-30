@@ -9,6 +9,6 @@ namespace NetBitz.Weaver.Types
     public class ProtectionConfiguration
     {
         public List<IWeaverPipelineProtection> Protections { get; } = new List<IWeaverPipelineProtection>();
-        public List<AssemblyDef> InputAssemblies { get; } = new List<AssemblyDef>();
+        public List<ModuleDefMD> InputModules { get; } = new List<ModuleDefMD>();
     }
 }

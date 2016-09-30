@@ -16,7 +16,7 @@ namespace NetBitz.Weaver.ProtectionPipeline
         public void Run()
         {
             //Create factories
-            var inputModuleFactories = Configuration.InputAssemblies.Select(asm => new ProtectedModuleFactory(asm.ManifestModule)).ToList();
+            var inputModuleFactories = Configuration.InputModules.Select(mod => new ProtectedModuleFactory(mod)).ToList();
             //Create a factory collection
             Factories.AddRange(inputModuleFactories);
 

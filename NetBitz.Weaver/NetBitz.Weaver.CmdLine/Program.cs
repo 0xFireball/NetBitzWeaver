@@ -1,4 +1,5 @@
-﻿using NetBitz.Weaver.Extensibility;
+﻿using dnlib.DotNet;
+using NetBitz.Weaver.Extensibility;
 using NetBitz.Weaver.ProtectionPipeline;
 using NetBitz.Weaver.Types;
 using NetBitz.Weaver.Utilities;
@@ -39,8 +40,8 @@ namespace NetBitz.Weaver.CmdLine
                 var protectionConfiguration = new ProtectionConfiguration();
 
                 Console.WriteLine("Opening assembly...");
-                var loadedAssembly = AssemblyLoader.LoadAssembly(File.Open(inputFile, FileMode.Open, FileAccess.Read));
-                protectionConfiguration.InputAssemblies.Add(loadedAssembly);
+                var moduleDef = ModuleDefMD.Load(File.Open(inputFile, FileMode.Open, FileAccess.Read));
+                protectionConfiguration.InputModules.Add(moduleDef);
 
                 Console.WriteLine("Loading protections...");
 
@@ -68,17 +69,10 @@ namespace NetBitz.Weaver.CmdLine
                 //var outputModuleStreams = new List<MemoryStream>();
 
                 //There should only be one
-                foreach (var factory in protector.Factories)
+                var mainFactory = protector.Factories[0];
+                using (var outputFileStream = File.OpenWrite(outputFile))
                 {
-                    using (var outputMemStream = new MemoryStream())
-                    {
-                        factory.Module.Write(outputMemStream, factory.WriterOptions);
-                        using (var outputFileStream = File.OpenWrite(outputFile))
-                        {
-                            outputMemStream.Position = 0; //reset memstream
-                            outputMemStream.CopyTo(outputFileStream); //copy to file
-                        }
-                    }
+                    mainFactory.Module.Write(outputFileStream, mainFactory.WriterOptions);
                 }
 
                 //Run protector cleanup
