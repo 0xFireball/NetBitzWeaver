@@ -14,7 +14,7 @@ namespace NetBitzWeaver.Protections.Stock
 
         public string Description => "The standard set of protections for NetBitz Weaver";
 
-        public string Guid { get; set; } = "8d8f9a7b-7f79-4212-8e2c-907a12a24b7c";
+        public string PluginGuid { get; set; } = "8d8f9a7b-7f79-4212-8e2c-907a12a24b7c";
 
         public IPlatinumPluginHost Host { get; set; }
 
@@ -26,7 +26,7 @@ namespace NetBitzWeaver.Protections.Stock
 
         public Version Version => typeof(StockProtectionsPlugin).Assembly.GetName().Version;
 
-        public void ConfigurePlugin(PluginSettings pluginSettings)
+        public void ConfigurePlugin(PluginPreferences pluginSettings)
         {
             throw new NotImplementedException();
         }
