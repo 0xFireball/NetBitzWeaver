@@ -2,7 +2,6 @@
 using NetBitz.Weaver.Extensibility;
 using NetBitz.Weaver.ProtectionPipeline;
 using NetBitz.Weaver.Types;
-using NetBitz.Weaver.Utilities;
 using System;
 using System.IO;
 
