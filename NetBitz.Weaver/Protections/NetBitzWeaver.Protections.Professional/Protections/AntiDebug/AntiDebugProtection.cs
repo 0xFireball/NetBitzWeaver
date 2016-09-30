@@ -34,8 +34,9 @@ namespace NetBitzWeaver.Protections.Professional.Protections.AntiDebug
 
                 //Load entry point CIL body
 
-                var entryPointRef = factory.Module.EntryPoint;
-                var entryPointBody = entryPointRef.Body;
+                //Inject into .cctor
+                var globalCtorDef = factory.Module.GlobalType.FindOrCreateStaticConstructor();
+                var entryPointBody = globalCtorDef.Body;
 
                 //Inject a check to test if debugger is there
                 var debuggerTypeRef = new TypeRefUser(factory.Module, "System.Diagnostics", "Debugger", factory.Module.CorLibTypes.AssemblyRef);
