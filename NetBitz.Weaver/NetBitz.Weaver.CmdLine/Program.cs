@@ -1,7 +1,7 @@
 ﻿using dnlib.DotNet;
+using NetBitz.Weaver.Common.Types;
 using NetBitz.Weaver.Extensibility;
 using NetBitz.Weaver.ProtectionPipeline;
-using NetBitz.Weaver.Types;
 using System;
 using System.Collections.Generic;
 using System.IO;

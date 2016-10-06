@@ -2,7 +2,7 @@
 
 namespace NetBitz.Weaver.Common.Types
 {
-    public class ProtectedModuleFactoryCollection : List<ProtectedModuleFactory>
+    public class LayeredModuleFactoryCollection : List<LayeredModuleFactory>
     {
     }
 }

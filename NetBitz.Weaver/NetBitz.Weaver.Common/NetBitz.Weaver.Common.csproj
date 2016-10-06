@@ -51,7 +51,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RandomService.cs" />
     <Compile Include="Services\RandomServiceUtil.cs" />
+    <Compile Include="Types\IWeaverLayeringPipelineProtection.cs" />
     <Compile Include="Types\IWeaverPipelineProtection.cs" />
+    <Compile Include="Types\LayeredModuleFactory.cs" />
+    <Compile Include="Types\LayeredModuleFactoryCollection.cs" />
+    <Compile Include="Types\LayeringConfiguration.cs" />
     <Compile Include="Types\ProtectedModuleFactory.cs" />
     <Compile Include="Types\ProtectedModuleFactoryCollection.cs" />
     <Compile Include="Types\ProtectionConfiguration.cs" />

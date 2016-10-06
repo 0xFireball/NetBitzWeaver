@@ -1,22 +1,22 @@
 ﻿using NetBitz.Weaver.Common.Types;
 using System.Linq;
 
-namespace NetBitz.Weaver.ProtectionPipeline
+namespace NetBitz.Weaver.LayeringPipeline
 {
-    public class WeaverProtector
+    public class WeaverLayerer
     {
-        private ProtectionConfiguration Configuration { get; }
-        public ProtectedModuleFactoryCollection Factories { get; } = new ProtectedModuleFactoryCollection();
+        private LayeringConfiguration Configuration { get; }
+        public LayeredModuleFactoryCollection Factories { get; } = new LayeredModuleFactoryCollection();
 
-        public WeaverProtector(ProtectionConfiguration protectionConfiguration)
+        public WeaverLayerer(LayeringConfiguration layeringConfiguration)
         {
-            Configuration = protectionConfiguration;
+            Configuration = layeringConfiguration;
         }
 
         public void Run()
         {
             //Create factories
-            var inputModuleFactories = Configuration.InputModules.Select(mod => new ProtectedModuleFactory(mod)).ToList();
+            var inputModuleFactories = Configuration.InputModules.Select(mod => new LayeredModuleFactory(mod)).ToList();
             //Create a factory collection
             Factories.AddRange(inputModuleFactories);
 
@@ -38,7 +38,7 @@ namespace NetBitz.Weaver.ProtectionPipeline
             }
         }
 
-        public void UnloadProtectors()
+        public void UnloadProviders()
         {
             Configuration.Protections.ForEach(pr => pr.Unload());
         }

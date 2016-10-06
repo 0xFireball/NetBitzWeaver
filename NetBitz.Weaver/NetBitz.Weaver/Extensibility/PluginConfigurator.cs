@@ -1,4 +1,4 @@
-﻿using NetBitz.Weaver.Types;
+﻿using NetBitz.Weaver.Common.Types;
 using System;
 using System.IO;
 using System.Linq;

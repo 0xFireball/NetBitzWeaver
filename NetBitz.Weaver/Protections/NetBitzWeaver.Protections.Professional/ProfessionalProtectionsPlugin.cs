@@ -1,5 +1,5 @@
 ﻿using NetBitz.Weaver.Common.Extensibility;
-using NetBitz.Weaver.Types;
+using NetBitz.Weaver.Common.Types;
 using NetBitzWeaver.Protections.Professional.Protections.AntiDebug;
 using Platinum.PluginCore3;
 using Platinum.PluginCore3.Classes;

@@ -1,8 +1,8 @@
 ﻿using dnlib.DotNet.MD;
 using dnlib.DotNet.Writer;
 using NetBitz.Weaver.Common.Services;
+using NetBitz.Weaver.Common.Types;
 using NetBitz.Weaver.Common.Utilities;
-using NetBitz.Weaver.Types;
 using System;
 using System.Collections.Generic;
 using System.IO;

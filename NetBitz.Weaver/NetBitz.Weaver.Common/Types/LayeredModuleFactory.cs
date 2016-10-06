@@ -4,13 +4,13 @@ using NetBitz.Weaver.Common.Utilities;
 
 namespace NetBitz.Weaver.Common.Types
 {
-    public class ProtectedModuleFactory
+    public class LayeredModuleFactory
     {
         public ModuleDef Module { get; }
         public ModuleWriterOptions WriterOptions { get; private set; }
         public ModuleWriterListener CurrentModuleWriterListener => WriterOptions.Listener as ModuleWriterListener;
 
-        public ProtectedModuleFactory(ModuleDef module)
+        public LayeredModuleFactory(ModuleDef module)
         {
             Module = module;
             CreateModuleObjects();

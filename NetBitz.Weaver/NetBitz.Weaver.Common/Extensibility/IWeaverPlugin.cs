@@ -1,4 +1,4 @@
-﻿using NetBitz.Weaver.Types;
+﻿using NetBitz.Weaver.Common.Types;
 using Platinum.PluginCore3;
 using System.Collections.Generic;
 

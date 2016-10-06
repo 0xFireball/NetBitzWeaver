@@ -1,10 +1,12 @@
-﻿namespace NetBitz.Weaver.Common.Types
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NetBitz.Weaver.Common.Types
 {
-    /// <summary>
-    /// A protection for the NetBitz Weaver pipeline. Possibly, a different kind of protection will be added
-    /// in the future.
-    /// </summary>
-    public interface IWeaverPipelineProtection
+    public interface IWeaverLayeringPipelineProtection
     {
         /// <summary>
         /// A GUID for the protection
@@ -32,9 +34,9 @@
         /// </summary>
         void Initialize();
 
-        void RunProtection(ProtectedModuleFactory factory);
+        void RunProtection(LayeredModuleFactory factory);
 
-        void RunProtection(ProtectedModuleFactoryCollection factoryCollection);
+        void RunProtection(LayeredModuleFactoryCollection factoryCollection);
 
         /// <summary>
         /// Allows the protection class to do cleanup

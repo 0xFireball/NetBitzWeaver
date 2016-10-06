@@ -1,7 +1,7 @@
 ﻿using dnlib.DotNet;
 using System.Collections.Generic;
 
-namespace NetBitz.Weaver.Types
+namespace NetBitz.Weaver.Common.Types
 {
     /// <summary>
     /// Represents a configuration for the NetBitz Weaver protection pipeline

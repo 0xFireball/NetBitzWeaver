@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Extensibility\PluginConfigurator.cs" />
     <Compile Include="Extensibility\WeaverPluginLoader.cs" />
+    <Compile Include="LayeringPipeline\WeaverLayerer.cs" />
     <Compile Include="ProjectFormat\WeaverProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtectionPipeline\WeaverProtector.cs" />
