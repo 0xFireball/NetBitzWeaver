@@ -3,6 +3,7 @@ using NetBitz.Weaver.Extensibility;
 using NetBitz.Weaver.ProtectionPipeline;
 using NetBitz.Weaver.Types;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace NetBitz.Weaver.CmdLine
@@ -65,19 +66,28 @@ namespace NetBitz.Weaver.CmdLine
 
                 Console.WriteLine("Writing modules...");
 
-                //var outputModuleStreams = new List<MemoryStream>();
+                //We're going to save the protected modules in memory so we can wrap them in layers
+                var outputModuleStreams = new List<MemoryStream>();
 
                 //There should only be one
-                var mainFactory = protector.Factories[0];
-                using (var outputFileStream = File.OpenWrite(outputFile))
+                foreach (var protectorFactory in protector.Factories)
                 {
-                    mainFactory.Module.Write(outputFileStream, mainFactory.WriterOptions);
+                    var outputStream = new MemoryStream();
+                    protectorFactory.Module.Write(outputStream, protectorFactory.WriterOptions);
+                    outputModuleStreams.Add(outputStream);
                 }
 
                 //Run protector cleanup
                 protector.UnloadProtectors();
 
-                //outputModuleStreams.Add(outputStream);
+                //Take care of layer protections
+
+                //There should only be one
+                var mainOutputMemStream = outputModuleStreams[0];
+                using (var outputFileStream = File.OpenWrite(outputFile))
+                {
+                    mainOutputMemStream.CopyTo(outputFileStream);
+                }
             }
         }
 

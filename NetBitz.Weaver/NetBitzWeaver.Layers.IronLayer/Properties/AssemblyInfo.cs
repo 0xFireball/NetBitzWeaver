@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IronShield")]
+[assembly: AssemblyTitle("NetBitzWeaver.Layers.IronLayer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IronShield")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyProduct("NetBitzWeaver.Layers.IronLayer")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f0faa597-76be-4b9c-8197-5d995382b101")]
+[assembly: Guid("2d78f512-8c38-451f-abf3-7257d6a699e9")]
 
 // Version information for an assembly consists of the following four values:
 //
