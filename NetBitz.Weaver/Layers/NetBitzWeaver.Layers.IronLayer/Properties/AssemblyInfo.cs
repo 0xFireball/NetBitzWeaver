@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NetBitzWeaver.Layers.IronLayer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("NetBitzWeaver IronLayer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("IridiumIon Software")]
 [assembly: AssemblyProduct("NetBitzWeaver.Layers.IronLayer")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright ©  2016 0xFireball")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
