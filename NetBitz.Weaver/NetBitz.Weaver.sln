@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Protections.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnlib", "..\Libraries\dnlib\src\dnlib.csproj", "{FDFC1237-143F-4919-8318-4926901F4639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Layers.IronLayer", "NetBitzWeaver.Layers.IronLayer\NetBitzWeaver.Layers.IronLayer.csproj", "{2D78F512-8C38-451F-ABF3-7257D6A699E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBitzWeaver.Layers.IronLayer", "Layers\NetBitzWeaver.Layers.IronLayer\NetBitzWeaver.Layers.IronLayer.csproj", "{2D78F512-8C38-451F-ABF3-7257D6A699E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
