@@ -84,6 +84,7 @@ namespace NetBitz.Weaver.CmdLine
 
                 //There should only be one
                 var mainOutputMemStream = outputModuleStreams[0];
+                mainOutputMemStream.Position = 0;
                 using (var outputFileStream = File.OpenWrite(outputFile))
                 {
                     mainOutputMemStream.CopyTo(outputFileStream);
